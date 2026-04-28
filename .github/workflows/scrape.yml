@@ -1,10 +1,8 @@
 name: Daily Scrape
-
 on:
   schedule:
     - cron: '0 8 * * *'
   workflow_dispatch:
-
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -13,7 +11,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install requests beautifulsoup4 pandas supabase
+      - run: pip install requests beautifulsoup4 pandas supabase playwright
+      - run: playwright install chromium
+      - run: playwright install-deps chromium
       - env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
