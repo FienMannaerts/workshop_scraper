@@ -59,7 +59,7 @@ async def scrape():
 
     await browser.close()
 
-await scrape()
+asyncio.run(scrape())
 
 df = pd.DataFrame(rows)
 
