@@ -17,4 +17,4 @@ jobs:
       - env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-        run: python scrape.py
+        run: python business_it_workshop_breiwebshop.py
